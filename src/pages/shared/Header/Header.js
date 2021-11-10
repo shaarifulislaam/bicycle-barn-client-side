@@ -1,34 +1,40 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Bicycle Barn</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+          <Nav className="ms-auto">
+            <Nav.Link as={HashLink} to="/home#home" className="navbar">
+              Home
+            </Nav.Link>
+            <Nav.Link as={HashLink} to="/home#about" className="navbar">
+              About Us
+            </Nav.Link>
+            <Nav.Link as={HashLink} to="/home#products" className="navbar">
+              Products
+            </Nav.Link>
+            <Nav.Link as={HashLink} to="/home#reviews" className="navbar">
+              Review
+            </Nav.Link>
+            <Nav.Link as={HashLink} to="/home#contact" className="navbar">
+              Contact
+            </Nav.Link>
+            <Nav.Link as={Link} to="/login" className="navbar">
+              Login
             </Nav.Link>
           </Nav>
+          <Navbar.Text>
+            <Nav.Link as={Link} to="/login" variant="light" className="navbar ">
+              User
+            </Nav.Link>
+          </Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>
