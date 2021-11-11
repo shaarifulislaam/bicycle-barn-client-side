@@ -10,6 +10,7 @@ import Products from "./pages/Home/Products/Products";
 import Reviews from "./pages/Home/Reviews/Reviews";
 import About from "./pages/Home/About/About";
 import AllProducts from "./pages/AllProducts/AllProducts";
+import Purchase from "./pages/Purchase/Purchase";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route exact path="/allProducts">
             <AllProducts></AllProducts>
+          </Route>
+          <Route exact path="/purchase/:purchaseId">
+            <Purchase></Purchase>
           </Route>
           <Route exact path="/reviews">
             <Reviews></Reviews>

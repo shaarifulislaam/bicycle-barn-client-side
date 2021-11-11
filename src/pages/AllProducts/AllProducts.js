@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    const url = "https://morning-retreat-31667.herokuapp.com/allProducts";
+    const url = "http://localhost:5000/products";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
@@ -35,7 +35,7 @@ const AllProducts = () => {
                 <p className="service-price">Fee : {pd.price} BDT</p>
               </Card.Body>
               <Card.Footer className="border border-0 bg-white">
-                <Link to={`/serviceDetails/${pd._id}`}>
+                <Link to={`/purchase/${pd._id}`}>
                   <Button variant="primary  custom-btn ">Book Now</Button>
                 </Link>
               </Card.Footer>
