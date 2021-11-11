@@ -5,42 +5,42 @@ import {
   Image,
   Row,
   Button,
-  Alert,
   Spinner,
+  Alert,
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../../../hooks/UseAuth/useAuth";
-import login from "../../../../images/login/login.jpg";
+import regImg from "../../../../images/register/register.png";
 
-const Login = () => {
-  const { user, loginUser, signInWithGoogle, isLoading, error } = useAuth();
-
-  const location = useLocation();
-  const history = useHistory();
+const Register = () => {
+  const { user, registerUser, isLoading, error } = useAuth();
   const {
     register,
     reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const history = useHistory();
   const onSubmit = (data) => {
-    loginUser(data.email, data.password, location, history);
-    alert("login ");
-    // console.log(data);
-  };
-  const handleGoogleSignIn = () => {
-    signInWithGoogle(location, history);
+    registerUser(data.email, data.password, data.name, history);
   };
   return (
     <Container>
       <Row className="d-flex justify-content-center align-items-center ">
         <Col sm={12} md={6} lg={6}>
-          <h1>Please Login</h1>
+          <h1>Please Register</h1>
           <div className="login-box  m-auto mt-3">
             <div className=" d-flex justify-content-center align-items-center">
               <div className="login-form mx-auto text-center">
                 <form onSubmit={handleSubmit(onSubmit)}>
+                  <input
+                    {...register("name")}
+                    placeholder="Your Name"
+                    className="p-2 m-2"
+                  />
+
                   <input
                     {...register("email")}
                     type="email"
@@ -61,17 +61,10 @@ const Login = () => {
 
                   <input
                     type="submit"
-                    value="Login"
+                    value="Register"
                     className="custom-btn p-2 m-2"
                   />
                 </form>
-                <Link style={{ textDecoration: "none" }} to="/register">
-                  <Button variant="text">New user? Please Register</Button>
-                </Link>
-                <p>------------------------------------</p>
-                <Button onClick={handleGoogleSignIn} variant="primary">
-                  Google sign in
-                </Button>
                 {isLoading && (
                   <div className="mx-auto text-center">
                     <Spinner animation="border" variant="primary " />;
@@ -84,14 +77,19 @@ const Login = () => {
                   </Alert>
                 )}
                 {error && <Alert variant="warning">{error}</Alert>}
+                <Link style={{ textDecoration: "none" }} to="/login">
+                  <Button variant="text">
+                    Already Registered? Please Login
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </Col>
         <Col sm={12} md={6} lg={6}>
           {" "}
-          <div className="mt-2">
-            <Image style={{ width: "100%" }} src={login} />
+          <div className="p-5">
+            <Image style={{ width: "100%" }} src={regImg} />
           </div>
         </Col>
       </Row>
@@ -99,4 +97,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
