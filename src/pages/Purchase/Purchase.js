@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
+import useAuth from "../../hooks/UseAuth/useAuth";
 import "./purchase.css";
 
 const Purchase = () => {
   const { purchaseId } = useParams();
   const [product, setProduct] = useState({});
+
+  const { user } = useAuth();
 
   const {
     register,
@@ -20,8 +23,8 @@ const Purchase = () => {
   }, []);
 
   const onSubmit = (data) => {
-    /*   data.status = "pending";
-    fetch("https://still-ridge-26061.herokuapp.com/placeBooking", {
+    data.status = "pending";
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -31,9 +34,9 @@ const Purchase = () => {
         if (result.insertedId) {
           alert("Data added successfully!");
           reset();
-          history.push("/myBooking");
+          // history.push("/myBooking");
         }
-      }); */
+      });
     console.log(data);
   };
   return (
@@ -59,27 +62,24 @@ const Purchase = () => {
             <div className="login-form mx-auto text-center">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
-                  {...register("email")}
-                  placeholder="Email"
-                  value="email"
-                  className="p-2 m-2"
-                />
-                <input
                   {...register("name")}
-                  placeholder="Name"
-                  defaultValue="name"
+                  value={user.displayName}
+                  className="p-2 m-2"
+                />
+                <input
+                  {...register("email")}
+                  value={user.email}
                   className="p-2 m-2"
                 />
 
                 <input
-                  {...register("date", { required: true })}
-                  placeholder="date"
+                  {...register("phone")}
+                  placeholder="Enter Phone number"
                   className="p-2 m-2"
-                  type="date"
                 />
 
                 <input
-                  {...register("service", { required: true })}
+                  {...register("product")}
                   placeholder="Product Name"
                   value={product?.name}
                   className="p-2 m-2"
@@ -100,7 +100,7 @@ const Purchase = () => {
 
                 <input
                   type="submit"
-                  value="Place Booking"
+                  value="Order"
                   className="custom-btn mb-2"
                 />
               </form>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
@@ -29,7 +29,7 @@ const AddProduct = () => {
   return (
     <div>
       <div className="login-box w-75 m-auto mt-5 border border">
-        <h1 className="mt-5 text-center ">Add As a Service</h1>
+        <h1 className="mt-5 text-center ">Add a product</h1>
         <div className="  d-flex justify-content-center align-items-center">
           <div className="login-form mx-auto text-center">
             <form onSubmit={handleSubmit(onSubmit)}>

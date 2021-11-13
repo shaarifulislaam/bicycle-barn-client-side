@@ -1,6 +1,7 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./footer.css";
 
 const Footer = () => {
   return (
@@ -11,8 +12,8 @@ const Footer = () => {
             <div className="mt-5">
               {/* <Image height="100px" src={logo} /> */}
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
-                provident.
+                Bicycle barn is one of the best cycle barn in bd.It is a reputed
+                bicycle seller.
               </p>
               <div className="all-icon">
                 <Link to="https://www.facebook.com/">
@@ -53,7 +54,7 @@ const Footer = () => {
                 <span>
                   <i className="fas fa-envelope"></i>
                 </span>{" "}
-                info@happyvalleypark.com
+                info@bicyclebarn.com
               </p>
               <p>
                 <span>
@@ -78,7 +79,7 @@ const Footer = () => {
                 <span>
                   <i className="fas fa-map-marker-alt"></i>
                 </span>
-                Sultan Highway , Dhaka , BanglaDesh
+                Alsiphar , Dhaka , BanglaDesh
               </p>
               <h6>Corporate Location</h6>
               <p>

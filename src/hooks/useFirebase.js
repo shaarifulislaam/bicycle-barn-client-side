@@ -16,6 +16,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [control, setControl] = useState(false);
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
@@ -106,6 +107,8 @@ const useFirebase = () => {
     loginUser,
     logOut,
     error,
+    control,
+    setControl,
   };
 };
 export default useFirebase;
