@@ -5,7 +5,7 @@ import ReactStars from "react-rating-stars-component";
 const Testimonial = () => {
   const [testimonial, setTestimonial] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://morning-retreat-31667.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setTestimonial(data));
   }, []);

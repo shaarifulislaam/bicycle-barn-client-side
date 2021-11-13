@@ -17,14 +17,14 @@ const Purchase = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${purchaseId}`)
+    fetch(`https://morning-retreat-31667.herokuapp.com/${purchaseId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
 
   const onSubmit = (data) => {
     data.status = "pending";
-    fetch("http://localhost:5000/orders", {
+    fetch("https://morning-retreat-31667.herokuapp.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

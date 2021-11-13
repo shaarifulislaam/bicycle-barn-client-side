@@ -6,7 +6,7 @@ const ManageProducts = () => {
   const [manageProducts, setManageProducts] = useState([]);
   const { control, setControl } = useAuth();
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://morning-retreat-31667.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setManageProducts(data));
   }, [control]);
@@ -14,7 +14,7 @@ const ManageProducts = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://morning-retreat-31667.herokuapp.com/${id}`;
       fetch(url, {
         method: "DELETE",
       })
