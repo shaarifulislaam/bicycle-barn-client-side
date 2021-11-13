@@ -7,13 +7,14 @@ import Login from "./pages/Home/Login/Login/Login";
 import Header from "./pages/shared/Header/Header";
 import Footer from "./pages/shared/Footer/Footer";
 import Products from "./pages/Home/Products/Products";
-import Reviews from "./pages/Home/Reviews/Reviews";
 import About from "./pages/Home/About/About";
 import AllProducts from "./pages/AllProducts/AllProducts";
 import Purchase from "./pages/Purchase/Purchase";
 import Register from "./pages/Home/Login/Register/Register";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./pages/Home/Login/PrivateRoute/PrivateRoute";
+import DashBoard from "./pages/DashBoard/DashBoard/DashBoard";
+import Testimonial from "./pages/Home/Testimonial/Testimonial";
 
 function App() {
   return (
@@ -46,8 +47,11 @@ function App() {
             <PrivateRoute exact path="/purchase/:purchaseId">
               <Purchase></Purchase>
             </PrivateRoute>
-            <Route exact path="/reviews">
-              <Reviews></Reviews>
+            <PrivateRoute path="/dashBoard">
+              <DashBoard></DashBoard>
+            </PrivateRoute>
+            <Route exact path="/Testimonial">
+              <Testimonial></Testimonial>
             </Route>
             <Route exact path="*">
               <NotFound></NotFound>

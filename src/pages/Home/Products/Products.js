@@ -12,7 +12,7 @@ const Products = () => {
   const homePageProducts = products.slice(0, 4);
   return (
     <div id="products">
-      <h3 className="mt-5">FEATURED PRODUCTS</h3>
+      <h3 className="mt-5 text-center">FEATURED PRODUCTS</h3>
       <Row
         xs={1}
         md={2}
