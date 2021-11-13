@@ -9,7 +9,7 @@ const Products = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  const homePageProducts = products.slice(0, 4);
+  const homePageProducts = products.slice(0, 6);
   return (
     <div id="products">
       <h3 className="mt-5 text-center">FEATURED PRODUCTS</h3>
@@ -29,11 +29,7 @@ const Products = () => {
                 </Card.Title>
                 <div className="description">
                   <Card.Text className="custom-text">
-                    {pd.description
-                      .split(" ")
-                      .slice(0, 200)
-                      .toString()
-                      .replace(/,/g, " ")}
+                    {pd.description.slice(0, 100)}
                   </Card.Text>
                 </div>
                 <p className="service-price">Fee : {pd.price} BDT</p>

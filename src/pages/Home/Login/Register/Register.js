@@ -67,7 +67,7 @@ const Register = () => {
                 </form>
                 {isLoading && (
                   <div className="mx-auto text-center">
-                    <Spinner animation="border" variant="primary " />;
+                    <Spinner animation="border" variant="primary " />
                   </div>
                 )}
                 {user?.email && (

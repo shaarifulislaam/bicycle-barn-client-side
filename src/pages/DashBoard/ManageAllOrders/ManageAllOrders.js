@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import axios from "axios";
 import useAuth from "../../../hooks/UseAuth/useAuth";
 import "./manageAllOrders.css";
 
@@ -27,6 +28,19 @@ const ManageAllOrders = () => {
           }
         });
     }
+  };
+
+  //*handle update
+  const handleUpdate = (id) => {
+    let data = orders.find((booking) => booking._id == id);
+    data.status = "APPROVED";
+
+    axios.put(`http://localhost:5000/orders${id}`, data).then((res) => {
+      if (res) {
+        alert("Approved");
+        setControl(!control);
+      }
+    });
   };
   return (
     <div>
@@ -57,7 +71,7 @@ const ManageAllOrders = () => {
 
               <td>
                 <button
-                  // onClick={() => handleUpdate(booking._id)}
+                  onClick={() => handleUpdate(order._id)}
                   className="btn btn-primary"
                 >
                   {order?.status === "pending" ? "Pending" : "Approved"}

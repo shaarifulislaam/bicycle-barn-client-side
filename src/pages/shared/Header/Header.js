@@ -25,21 +25,20 @@ const Header = () => {
             <Nav.Link as={HashLink} to="/home#reviews" className="navbar">
               Review
             </Nav.Link>
-
+            {user?.email && (
+              <Nav.Link as={HashLink} to="/dashBoard" className="navbar">
+                Dashboard
+              </Nav.Link>
+            )}
             {user.email ? (
-              <div className="d-flex">
-                <Nav.Link as={HashLink} to="/dashBoard" className="navbar">
-                  Dashboard
-                </Nav.Link>
-                <Nav.Link
-                  onClick={logOut}
-                  as={Link}
-                  to="/login"
-                  className="navbar"
-                >
-                  Logout
-                </Nav.Link>
-              </div>
+              <Nav.Link
+                onClick={logOut}
+                as={Link}
+                to="/login"
+                className="navbar"
+              >
+                Logout
+              </Nav.Link>
             ) : (
               <Nav.Link as={Link} to="/login" className="navbar">
                 Login

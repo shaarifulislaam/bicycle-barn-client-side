@@ -17,6 +17,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [control, setControl] = useState(false);
+  const [admin, setAdmin] = useState(false);
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
@@ -28,6 +29,8 @@ const useFirebase = () => {
         setError("");
         const newUser = { email, displayName: name };
         setUser(newUser);
+        //saved user to database
+        savedUser(email, name);
         //*send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -64,6 +67,7 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
+        savedUserGoogleSignIn(user.email, user.displayName);
         const redirect = location?.state?.from || "/";
         history.replace(redirect);
         setError("");
@@ -89,6 +93,13 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, []);
 
+  useEffect(() => {
+    fetch(`https://morning-retreat-31667.herokuapp.com/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user?.email]);
+
+  //*logout
   const logOut = () => {
     signOut(auth)
       .then(() => {
@@ -99,8 +110,39 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+  //*saved user
+  const savedUser = (email, displayName) => {
+    const user = { email, displayName };
+    fetch("https://morning-retreat-31667.herokuapp.com/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+  const savedUserGoogleSignIn = (email, displayName) => {
+    const user = { email, displayName };
+    fetch("https://morning-retreat-31667.herokuapp.com/users", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return {
     user,
+    admin,
     isLoading,
     signInWithGoogle,
     registerUser,

@@ -28,7 +28,7 @@ const AllProducts = () => {
                 </Card.Title>
                 <div className="description">
                   <Card.Text className="custom-text">
-                    {pd.description.slice(0, 160)}
+                    {pd.description.slice(0, 100)}
                   </Card.Text>
                 </div>
                 <p className="service-price">Fee : {pd.price} BDT</p>
