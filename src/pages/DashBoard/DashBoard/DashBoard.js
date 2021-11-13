@@ -94,7 +94,7 @@ const DashBoard = (props) => {
                     style={{ textDecoration: "none" }}
                     to={`${url}/makeAdmin`}
                   >
-                    <Button className="mb-2" variant="secondary">
+                    <Button className="mb-2 w-75" variant="secondary">
                       Make Admin
                     </Button>
                   </Link>

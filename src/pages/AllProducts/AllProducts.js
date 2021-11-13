@@ -11,7 +11,7 @@ const AllProducts = () => {
   }, []);
   return (
     <div>
-      <h3 className="mt-5">FEATURED PRODUCTS</h3>
+      <h3 className="mt-5 text-center">FEATURED PRODUCTS</h3>
       <Row
         xs={1}
         md={2}
@@ -35,7 +35,7 @@ const AllProducts = () => {
               </Card.Body>
               <Card.Footer className="border border-0 bg-white">
                 <Link to={`/purchase/${pd._id}`}>
-                  <Button variant="primary  custom-btn ">Book Now</Button>
+                  <Button variant="primary  custom-btn ">Buy Now</Button>
                 </Link>
               </Card.Footer>
             </Card>

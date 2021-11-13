@@ -40,7 +40,7 @@ const Products = () => {
               </Card.Body>
               <Card.Footer className="border border-0 bg-white">
                 <Link to={`/purchase/${pd._id}`}>
-                  <Button variant="primary  custom-btn ">Book Now</Button>
+                  <Button variant="primary  custom-btn ">Buy Now</Button>
                 </Link>
               </Card.Footer>
             </Card>
