@@ -35,12 +35,14 @@ const ManageAllOrders = () => {
     let data = orders.find((booking) => booking._id == id);
     data.status = "APPROVED";
 
-    axios.put(`http://localhost:5000/orders${id}`, data).then((res) => {
-      if (res) {
-        alert("Approved");
-        setControl(!control);
-      }
-    });
+    axios
+      .put(`https://morning-retreat-31667.herokuapp.com/orders${id}`, data)
+      .then((res) => {
+        if (res) {
+          alert("Approved");
+          setControl(!control);
+        }
+      });
   };
   return (
     <div>
