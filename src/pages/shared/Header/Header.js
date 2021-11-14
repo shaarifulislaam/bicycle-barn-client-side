@@ -3,13 +3,17 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/UseAuth/useAuth";
+import "./header.css";
 
 const Header = () => {
   const { user, logOut } = useAuth();
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Bicycle Barn</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          {" "}
+          <span className="text"> Bicycle</span> Barn
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
@@ -22,8 +26,8 @@ const Header = () => {
             <Nav.Link as={HashLink} to="/home#products" className="navbar">
               Products
             </Nav.Link>
-            <Nav.Link as={HashLink} to="/home#reviews" className="navbar">
-              Review
+            <Nav.Link as={HashLink} to="/home#testimonial" className="navbar">
+              Testimonial
             </Nav.Link>
             {user?.email && (
               <Nav.Link as={HashLink} to="/dashBoard" className="navbar">

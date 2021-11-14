@@ -19,7 +19,9 @@ const Banner = () => {
                 bikes, city bikes, girls bikes and more.
               </p>
               <Link to="/allProducts">
-                <Button variant="secondary">Explore</Button>
+                <Button className="custom-btn" variant="secondary">
+                  Explore
+                </Button>
               </Link>
             </div>
           </div>

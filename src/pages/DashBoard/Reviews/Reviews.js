@@ -43,7 +43,7 @@ const Reviews = () => {
               />
               <input
                 {...register("email")}
-                placeholder="Email "
+                value={user.email}
                 className="p-2 m-2"
               />
 

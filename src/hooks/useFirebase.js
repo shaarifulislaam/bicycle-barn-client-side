@@ -94,7 +94,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://morning-retreat-31667.herokuapp.com/${user.email}`)
+    fetch(`https://morning-retreat-31667.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);

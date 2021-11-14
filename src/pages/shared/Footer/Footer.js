@@ -5,12 +5,11 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer-container  bg-dark text-white">
+    <div className="footer-container  bg-dark text-white mt-5">
       <Container>
         <Row>
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             <div className="mt-5">
-              {/* <Image height="100px" src={logo} /> */}
               <p>
                 Bicycle barn is one of the best cycle barn in bd.It is a reputed
                 bicycle seller.
@@ -32,21 +31,8 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-          <Col xs={12} md={6} lg={3}>
-            <div className="mt-5 footer-text ">
-              <h4 className="fw-bolder mb-4">Hours</h4>
-              <h6>
-                Friday-Saturday <br />
-                (9:30 am - 7:00 pm)
-              </h6>
-              <br />
-              <h6>
-                Monday-Thursday <br />
-                (10:00 am - 7:00 pm)
-              </h6>
-            </div>
-          </Col>
-          <Col xs={12} md={6} lg={3}>
+
+          <Col xs={12} md={6} lg={4}>
             <div className="mt-5 footer-text ">
               <h4 className="fw-bolder mb-4">Contact</h4>
               <h6>Info Desk</h6>
@@ -71,7 +57,7 @@ const Footer = () => {
               </p>
             </div>
           </Col>
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             <div className="mt-5 footer-text ">
               <h4 className="fw-bolder mb-4">Address</h4>
               <h6>Park Location</h6>

@@ -36,7 +36,7 @@ const Login = () => {
     <Container>
       <Row className="d-flex justify-content-center align-items-center ">
         <Col sm={12} md={6} lg={6}>
-          <h1>Please Login</h1>
+          <h1 className="text-center">Please Login</h1>
           <div className="login-box  m-auto mt-3">
             <div className=" d-flex justify-content-center align-items-center">
               <div className="login-form mx-auto text-center">
@@ -69,7 +69,11 @@ const Login = () => {
                   <Button variant="text">New user? Please Register</Button>
                 </Link>
                 <p>------------------------------------</p>
-                <Button onClick={handleGoogleSignIn} variant="primary">
+                <Button
+                  onClick={handleGoogleSignIn}
+                  className="custom-btn"
+                  variant="primary"
+                >
                   Google sign in
                 </Button>
                 {isLoading && (

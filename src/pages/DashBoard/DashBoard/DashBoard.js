@@ -33,17 +33,11 @@ const DashBoard = (props) => {
             <Collapse in={open}>
               <Drawer.Overflow>
                 <Drawer.ToC>
-                  <Link style={{ textDecoration: "none" }} to="/">
-                    <Button className="mb-2 w-100 mx-2" variant="secondary">
-                      Home
-                    </Button>
-                  </Link>
-                  <br />
                   {!admin && (
                     <div>
                       <Link style={{ textDecoration: "none" }} to={`${url}`}>
                         <Button
-                          className="mb-2 w-75 w-100 mx-2"
+                          className="mb-2 w-75 w-100 mx-2 custom-btn"
                           variant="secondary"
                         >
                           Dashboard
@@ -55,7 +49,10 @@ const DashBoard = (props) => {
                         style={{ textDecoration: "none" }}
                         to={`${url}/myOrder`}
                       >
-                        <Button className="mb-2 w-100 mx-2" variant="secondary">
+                        <Button
+                          className="mb-2 w-100 mx-2 custom-btn"
+                          variant="secondary"
+                        >
                           My Order
                         </Button>
                       </Link>
@@ -64,7 +61,10 @@ const DashBoard = (props) => {
                         style={{ textDecoration: "none" }}
                         to={`${url}/payment`}
                       >
-                        <Button className="mb-2 w-100 mx-2" variant="secondary">
+                        <Button
+                          className="mb-2 w-100 mx-2 custom-btn"
+                          variant="secondary"
+                        >
                           Payment
                         </Button>
                       </Link>
@@ -74,7 +74,7 @@ const DashBoard = (props) => {
                         to={`${url}/reviews`}
                       >
                         <Button
-                          className="mb-2 w-100 mx-2 "
+                          className="mb-2 w-100 mx-2 custom-btn"
                           variant="secondary"
                         >
                           Reviews
@@ -89,7 +89,10 @@ const DashBoard = (props) => {
                         style={{ textDecoration: "none" }}
                         to={`${url}/manageAllOrders`}
                       >
-                        <Button className="mb-2 w-100 mx-2" variant="secondary">
+                        <Button
+                          className="mb-2 w-100 mx-2 custom-btn"
+                          variant="secondary"
+                        >
                           Manage All Orders
                         </Button>
                       </Link>
@@ -98,7 +101,10 @@ const DashBoard = (props) => {
                         style={{ textDecoration: "none" }}
                         to={`${url}/addProduct`}
                       >
-                        <Button className="mb-2 w-100 mx-2" variant="secondary">
+                        <Button
+                          className="mb-2 w-100 mx-2 custom-btn"
+                          variant="secondary"
+                        >
                           Add Product
                         </Button>
                       </Link>
@@ -107,7 +113,10 @@ const DashBoard = (props) => {
                         style={{ textDecoration: "none" }}
                         to={`${url}/makeAdmin`}
                       >
-                        <Button className="mb-2 w-100 mx-2" variant="secondary">
+                        <Button
+                          className="mb-2 w-100 mx-2 custom-btn"
+                          variant="secondary"
+                        >
                           Make Admin
                         </Button>
                       </Link>
@@ -116,7 +125,10 @@ const DashBoard = (props) => {
                         style={{ textDecoration: "none" }}
                         to={`${url}/manageProducts`}
                       >
-                        <Button className="mb-2 w-100 mx-2" variant="secondary">
+                        <Button
+                          className="mb-2 w-100 mx-2 custom-btn"
+                          variant="secondary"
+                        >
                           Manage Products
                         </Button>
                       </Link>
@@ -125,7 +137,7 @@ const DashBoard = (props) => {
                   <Link style={{ textDecoration: "none" }} to="/login">
                     <Button
                       onClick={logOut}
-                      className="mb-2 w-100 mx-2"
+                      className="mb-2 w-100 mx-2 custom-btn"
                       variant="secondary"
                     >
                       Logout

@@ -11,8 +11,8 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <div>
-      <h3 className="mt-5 text-center">Testimonial</h3>
+    <div id="testimonial">
+      <h1 className="mt-5 text-center">Testimonial</h1>
       <Row
         xs={1}
         md={2}
@@ -23,11 +23,10 @@ const Testimonial = () => {
           <Col key={review._id}>
             <Card className="rounded-4 shadow">
               <Card.Body>
-                <Card.Title className="fw-bold service-title">
+                <Card.Title className="fw-bold product-title">
                   {review.name}
                 </Card.Title>
                 <div className="description">
-                  <Card.Text className="custom-text">{review.email}</Card.Text>
                   <Card.Text className="custom-text">
                     {review.description}
                   </Card.Text>

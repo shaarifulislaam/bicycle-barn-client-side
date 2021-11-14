@@ -34,9 +34,8 @@ const ManageAllOrders = () => {
   const handleUpdate = (id) => {
     let data = orders.find((booking) => booking._id == id);
     data.status = "APPROVED";
-
     axios
-      .put(`https://morning-retreat-31667.herokuapp.com/orders${id}`, data)
+      .put(`https://morning-retreat-31667.herokuapp.com/orders/${id}`, data)
       .then((res) => {
         if (res) {
           alert("Approved");

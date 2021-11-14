@@ -50,7 +50,7 @@ function App() {
             <PrivateRoute path="/dashBoard">
               <DashBoard></DashBoard>
             </PrivateRoute>
-            <Route exact path="/Testimonial">
+            <Route exact path="/testimonial">
               <Testimonial></Testimonial>
             </Route>
             <Route exact path="*">

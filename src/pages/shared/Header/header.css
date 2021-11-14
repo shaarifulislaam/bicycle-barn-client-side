@@ -1,0 +1,28 @@
+.navbar {
+    padding: 10px;
+    color: #eeeff1;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+  }
+  a.navbar.nav-link:hover {
+    color: #fc5b62;
+    font-size: 1.1rem;
+  }
+  .header-bg{
+    background-color: #211E3B;
+    color: #ffffff;
+  }
+
+  .login-text{
+      color: #0c121f;
+  }
+  .login-text:hover{
+    color: #30333a;
+  }
+  .login-text2{
+    color: #eeeff1;
+}
+.login-text2:hover{
+  color: #edeff5;
+}

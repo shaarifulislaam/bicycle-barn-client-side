@@ -17,7 +17,7 @@ const Purchase = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`https://morning-retreat-31667.herokuapp.com/${purchaseId}`)
+    fetch(`https://morning-retreat-31667.herokuapp.com/products/${purchaseId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -34,7 +34,6 @@ const Purchase = () => {
         if (result.insertedId) {
           alert("Data added successfully!");
           reset();
-          // history.push("/myBooking");
         }
       });
     console.log(data);
@@ -49,14 +48,16 @@ const Purchase = () => {
           <div className="col-md-12 col-lg-6 col-sm-12 custom-height">
             <h3 className="mt-5">{product?.name}</h3>
             <p>{product?.description}</p>
-            <p className="service-price">Fee : {product?.price} BDT</p>
+            <p className="product-price">
+              Fee : <span className="text">{product?.price} </span> BDT
+            </p>
           </div>
         </div>
       </div>
 
       {/* place order  */}
       <div className="col-md-6 col-lg-4 col-sm-12 border border p-1 mt-2 custom-con">
-        <h1 className="mt-3 text-center text-info">Place Order</h1>
+        <h1 className="mt-3 text-center  text">Place Order</h1>
         <div className="login-box  m-auto mt-3">
           <div className=" d-flex justify-content-center align-items-center">
             <div className="login-form mx-auto text-center">

@@ -11,7 +11,10 @@ const AllProducts = () => {
   }, []);
   return (
     <div>
-      <h3 className="mt-5 text-center">FEATURED PRODUCTS</h3>
+      <h1 className="mt-5 text-center">
+        {" "}
+        <span className="text"> FEATURED</span> PRODUCTS
+      </h1>
       <Row
         xs={1}
         md={2}
@@ -19,19 +22,28 @@ const AllProducts = () => {
         className="g-3 container-lg  mx-lg-auto mx-md-auto mx-0"
       >
         {allProducts.map((pd) => (
-          <Col key={pd._id}>
-            <Card className="rounded-4 shadow">
-              <Card.Img variant="top" src={pd.img} />
+          <Col key={pd?._id}>
+            <Card style={{ border: "none" }} className="rounded-4 shadow-sm">
+              <Card.Img
+                variant="top"
+                style={{ height: "300px" }}
+                src={pd.img}
+              />
               <Card.Body>
-                <Card.Title className="fw-bold service-title">
-                  {pd.name}
+                <Card.Title
+                  style={{ height: "50px" }}
+                  className="fw-bold product-title"
+                >
+                  {pd?.name}
                 </Card.Title>
                 <div className="description">
                   <Card.Text className="custom-text">
-                    {pd.description.slice(0, 100)}
+                    {pd?.description.slice(0, 100)}
                   </Card.Text>
                 </div>
-                <p className="service-price">Fee : {pd.price} BDT</p>
+                <p className="">
+                  Price : <span className="text">{pd?.price}</span> BDT
+                </p>
               </Card.Body>
               <Card.Footer className="border border-0 bg-white">
                 <Link to={`/purchase/${pd._id}`}>
