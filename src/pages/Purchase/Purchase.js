@@ -41,15 +41,15 @@ const Purchase = () => {
   return (
     <div className="row ">
       <div className="col-md-6 col-lg-8 col-sm-12">
-        <div className="row container-fluid mt-lg-5">
-          <div className="col-md-12 col-lg-6 col-sm-12">
-            <img className="mt-lg-5" src={product?.img} alt="" />
+        <div className=" mt-lg-5">
+          <div>
+            <img className="mt-lg-5 mx-lg-5" src={product?.img} alt="" />
           </div>
-          <div className="col-md-12 col-lg-6 col-sm-12 custom-height">
+          <div>
             <h3 className="mt-5">{product?.name}</h3>
             <p>{product?.description}</p>
             <p className="product-price">
-              Fee : <span className="text">{product?.price} </span> BDT
+              Price : <span className="text">{product?.price} </span> BDT
             </p>
           </div>
         </div>
@@ -64,12 +64,12 @@ const Purchase = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("name")}
-                  value={user.displayName}
+                  value={user?.displayName}
                   className="p-2 m-2"
                 />
                 <input
                   {...register("email")}
-                  value={user.email}
+                  value={user?.email}
                   className="p-2 m-2"
                 />
 

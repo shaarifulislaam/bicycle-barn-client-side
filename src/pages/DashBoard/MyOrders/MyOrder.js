@@ -7,7 +7,7 @@ const MyOrder = () => {
 
   const { control, setControl, user } = useAuth();
   useEffect(() => {
-    fetch(`https://morning-retreat-31667.herokuapp.com/${user.email}`)
+    fetch(`https://morning-retreat-31667.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyOrders(data);
@@ -17,7 +17,7 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://morning-retreat-31667.herokuapp.com/${id}`;
+      const url = `https://morning-retreat-31667.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -41,7 +41,7 @@ const MyOrder = () => {
           <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Product</th>
+            <th className="text-center">Product</th>
             <th>Price</th>
             <th>Status</th>
             <th>Action</th>
@@ -51,7 +51,7 @@ const MyOrder = () => {
           <tbody key={order?._id}>
             <tr>
               <td>{index}</td>
-              <td>{user?.name}</td>
+              <td>{user?.displayName}</td>
               <td>{order?.product}</td>
               <td>{order?.price}</td>
 

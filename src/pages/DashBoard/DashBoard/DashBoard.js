@@ -35,16 +35,6 @@ const DashBoard = (props) => {
                 <Drawer.ToC>
                   {!admin && (
                     <div>
-                      <Link style={{ textDecoration: "none" }} to={`${url}`}>
-                        <Button
-                          className="mb-2 w-75 w-100 mx-2 custom-btn"
-                          variant="secondary"
-                        >
-                          Dashboard
-                        </Button>
-                      </Link>
-                      <br />
-
                       <Link
                         style={{ textDecoration: "none" }}
                         to={`${url}/myOrder`}
@@ -151,7 +141,12 @@ const DashBoard = (props) => {
         <Col sm={9}>
           <Switch>
             <Route exact path={path}>
-              <DashBoardHome></DashBoardHome>
+              {/* <DashBoardHome></DashBoardHome> */}
+              {admin ? (
+                <ManageAllOrders></ManageAllOrders>
+              ) : (
+                <MyOrder></MyOrder>
+              )}
             </Route>
             <Route path={`${path}/myOrder`}>
               <MyOrder></MyOrder>

@@ -51,7 +51,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const destination = location?.state?.from || "/";
+        const destination = location?.state?.from || "/dashBoard";
         history.replace(destination);
         setError("");
       })
@@ -68,7 +68,7 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         savedUserGoogleSignIn(user.email, user.displayName);
-        const redirect = location?.state?.from || "/";
+        const redirect = location?.state?.from || "/dashBoard";
         history.replace(redirect);
         setError("");
       })

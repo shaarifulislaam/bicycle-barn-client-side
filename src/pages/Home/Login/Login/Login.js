@@ -45,7 +45,7 @@ const Login = () => {
                     {...register("email")}
                     type="email"
                     placeholder="Your Email"
-                    className="p-2 m-2"
+                    className="p-2 m-2 "
                   />
                   <input
                     {...register("password")}
@@ -74,6 +74,9 @@ const Login = () => {
                   className="custom-btn"
                   variant="primary"
                 >
+                  <span>
+                    <i class="fab fa-google"></i>
+                  </span>{" "}
                   Google sign in
                 </Button>
                 {isLoading && (
