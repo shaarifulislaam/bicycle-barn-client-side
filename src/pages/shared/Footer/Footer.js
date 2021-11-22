@@ -60,7 +60,7 @@ const Footer = () => {
           <Col xs={12} md={6} lg={4}>
             <div className="mt-5 footer-text ">
               <h4 className="fw-bolder mb-4">Address</h4>
-              <h6>Park Location</h6>
+              <h6>Bicycle Barn Location</h6>
               <p>
                 <span>
                   <i className="fas fa-map-marker-alt"></i>
