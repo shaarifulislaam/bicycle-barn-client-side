@@ -4,14 +4,13 @@ This site live link: https://bicycle-barn.web.app/
 
 ### Description
 
-On this website,User admin panel system added.If admin login in he/she can see add product ,manage product ,manage all order. and a normal user can see review ,my orders ,payment. A user can log in via using google sign and email password.
-Data save on mongodb server.
+On this website users can place their orders, see their orders, and also can post reviews.Admin can see all orders of the users. Admin can add a new product, update the current status, delete a product and make a new admin.
 
 About the Project:
 
-- User Login system
+- Users can login by using his/her google account or email and password.
 - Admin Panel dashboard
-- Add product
+- Admin can add a new product
 - Manage product (delete ,update)
 - Manage all order (delete ,update)
 - user Authentication
@@ -19,3 +18,13 @@ About the Project:
 - Nested routing system
 - Redirect system
 - Logout system
+
+Technology:
+
+- React
+- React-Router
+- Node.js
+- MongoDB
+- Bootstrap
+- Firebase Authentication
+- Heroku.
