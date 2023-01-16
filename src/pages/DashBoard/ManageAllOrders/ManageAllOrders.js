@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const { control, setControl, user } = useAuth();
   useEffect(() => {
-    fetch("https://morning-retreat-31667.herokuapp.com/orders")
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [control]);
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://morning-retreat-31667.herokuapp.com/${id}`;
+      const url = `https://niche-website-server-side-shaarifulislaam.vercel.app/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -35,7 +35,7 @@ const ManageAllOrders = () => {
     let data = orders.find((booking) => booking._id == id);
     data.status = "APPROVED";
     axios
-      .put(`https://morning-retreat-31667.herokuapp.com/orders/${id}`, data)
+      .put(`https://niche-website-server-side-shaarifulislaam.vercel.app/orders/${id}`, data)
       .then((res) => {
         if (res) {
           alert("Approved");

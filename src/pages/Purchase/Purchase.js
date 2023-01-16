@@ -17,14 +17,14 @@ const Purchase = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`https://morning-retreat-31667.herokuapp.com/products/${purchaseId}`)
+    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app/products/${purchaseId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
 
   const onSubmit = (data) => {
     data.status = "pending";
-    fetch("https://morning-retreat-31667.herokuapp.com/orders", {
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

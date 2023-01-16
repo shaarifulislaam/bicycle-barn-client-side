@@ -10,10 +10,9 @@ About the Project:
 
 - Users can login by using his/her google account or email and password.
 - Admin Panel dashboard
-- Admin can add a new product
-- Manage product (delete ,update)
-- Manage all order (delete ,update)
-- user Authentication
+- Admin can add a new product which is dynamically shown on the homepage.
+- Manage product (delete ,update status)
+- Manage all order (delete ,update status)
 - Mongodb use as server
 - Nested routing system
 - Redirect system

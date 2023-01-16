@@ -6,7 +6,7 @@ import "./products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://morning-retreat-31667.herokuapp.com/products")
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

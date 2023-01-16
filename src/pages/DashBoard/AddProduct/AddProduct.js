@@ -11,7 +11,7 @@ const AddProduct = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://morning-retreat-31667.herokuapp.com/products", {
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

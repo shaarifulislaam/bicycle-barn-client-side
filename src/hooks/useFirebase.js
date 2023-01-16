@@ -94,7 +94,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://morning-retreat-31667.herokuapp.com/users/${user.email}`)
+    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app//users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);
@@ -113,7 +113,7 @@ const useFirebase = () => {
   //*saved user
   const savedUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("https://morning-retreat-31667.herokuapp.com/users", {
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -127,7 +127,7 @@ const useFirebase = () => {
   };
   const savedUserGoogleSignIn = (email, displayName) => {
     const user = { email, displayName };
-    fetch("https://morning-retreat-31667.herokuapp.com/users", {
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

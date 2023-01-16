@@ -12,7 +12,7 @@ const Reviews = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://morning-retreat-31667.herokuapp.com/reviews", {
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

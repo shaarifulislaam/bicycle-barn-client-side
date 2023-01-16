@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://morning-retreat-31667.herokuapp.com/users/admin", {
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

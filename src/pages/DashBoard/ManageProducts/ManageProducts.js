@@ -6,7 +6,7 @@ const ManageProducts = () => {
   const [manageProducts, setManageProducts] = useState([]);
   const { control, setControl } = useAuth();
   useEffect(() => {
-    fetch("https://morning-retreat-31667.herokuapp.com/products")
+    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setManageProducts(data));
   }, [control]);
@@ -14,7 +14,7 @@ const ManageProducts = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://morning-retreat-31667.herokuapp.com/${id}`;
+      const url = `https://niche-website-server-side-shaarifulislaam.vercel.app/${id}`;
       fetch(url, {
         method: "DELETE",
       })
