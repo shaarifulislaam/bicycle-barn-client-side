@@ -94,7 +94,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app//users/${user.email}`)
+    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);
