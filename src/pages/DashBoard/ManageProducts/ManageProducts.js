@@ -6,7 +6,7 @@ const ManageProducts = () => {
   const [manageProducts, setManageProducts] = useState([]);
   const { control, setControl } = useAuth();
   useEffect(() => {
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/products")
+    fetch("https://bicycle-barn-server-side.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setManageProducts(data));
   }, [control]);
@@ -14,7 +14,7 @@ const ManageProducts = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://niche-website-server-side-shaarifulislaam.vercel.app/${id}`;
+      const url = `https://bicycle-barn-server-side.onrender.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })

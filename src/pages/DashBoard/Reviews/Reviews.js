@@ -12,7 +12,7 @@ const Reviews = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/reviews", {
+    fetch("https://bicycle-barn-server-side.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

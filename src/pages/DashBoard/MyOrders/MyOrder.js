@@ -7,7 +7,7 @@ const MyOrder = () => {
 
   const { control, setControl, user } = useAuth();
   useEffect(() => {
-    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app/orders/${user.email}`)
+    fetch(`https://bicycle-barn-server-side.onrender.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyOrders(data);
@@ -17,7 +17,7 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://niche-website-server-side-shaarifulislaam.vercel.app/orders/${id}`;
+      const url = `https://bicycle-barn-server-side.onrender.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

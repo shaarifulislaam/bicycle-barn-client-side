@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import './addproduct.css'
 
 const AddProduct = () => {
   const {
@@ -11,7 +12,8 @@ const AddProduct = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/products", {
+    console.log(data)
+    fetch("https://bicycle-barn-server-side.onrender.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,11 +53,21 @@ const AddProduct = () => {
                 className="p-2 m-2"
               />
 
+              <input 
+              
+              className=" p-2 m-2 border-1 border-dark border" 
+              // onChange={e=>console.log(e.target.files)}
+              type="file" {...register("file")}
+               id="formFileMultiple"
+                multiple
+                />
+
               <input
                 {...register("img", { required: true })}
                 placeholder="Image Url"
                 className="p-2 m-2"
               />
+          
 
               {errors.exampleRequired && <span>This field is required</span>}
 

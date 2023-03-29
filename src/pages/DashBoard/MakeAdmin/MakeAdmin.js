@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/users/admin", {
+    fetch("https://bicycle-barn-server-side.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

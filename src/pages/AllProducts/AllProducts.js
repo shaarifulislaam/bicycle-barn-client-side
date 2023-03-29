@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/products")
+    fetch("https://bicycle-barn-server-side.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);
@@ -13,7 +13,7 @@ const AllProducts = () => {
     <div>
       <h1 className="mt-5 text-center">
         {" "}
-        <span className="text"> FEATURED</span> PRODUCTS
+        <span className="text"> FEATURED </span> PRODUCTS
       </h1>
       <Row
         xs={1}

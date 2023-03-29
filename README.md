@@ -26,4 +26,4 @@ Technology:
 - MongoDB
 - Bootstrap
 - Firebase Authentication
-- Heroku.
+- Render.

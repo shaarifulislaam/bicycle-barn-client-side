@@ -10,6 +10,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import firebaseAuthInitialization from "../pages/Home/Login/firebase/firebase.init";
+import Swal from "sweetalert2";
 firebaseAuthInitialization();
 
 const useFirebase = () => {
@@ -37,6 +38,10 @@ const useFirebase = () => {
         })
           .then(() => {})
           .catch((error) => {});
+          Swal.fire(
+            'Good job!',
+            'Create Account Successfully!'
+        )
         history.replace("/");
       })
       .catch((error) => {
@@ -69,6 +74,10 @@ const useFirebase = () => {
         const user = result.user;
         savedUserGoogleSignIn(user.email, user.displayName);
         const redirect = location?.state?.from || "/dashBoard";
+        Swal.fire(
+          'Good job!',
+          'Create Account Successfully!'
+      )
         history.replace(redirect);
         setError("");
       })
@@ -82,7 +91,7 @@ const useFirebase = () => {
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const uid = user.uid;
+        // const uid = user.uid;
 
         setUser(user);
       } else {
@@ -94,7 +103,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app/users/${user.email}`)
+    fetch(`https://bicycle-barn-server-side.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);
@@ -104,6 +113,11 @@ const useFirebase = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
+        setUser({})
+        Swal.fire(
+          'Good job!',
+          'Logout Successfully!'
+      )
       })
       .catch((error) => {
         // An error happened.
@@ -113,7 +127,7 @@ const useFirebase = () => {
   //*saved user
   const savedUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/users", {
+    fetch("https://bicycle-barn-server-side.onrender.com/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -127,7 +141,7 @@ const useFirebase = () => {
   };
   const savedUserGoogleSignIn = (email, displayName) => {
     const user = { email, displayName };
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/users", {
+    fetch("https://bicycle-barn-server-side.onrender.com/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

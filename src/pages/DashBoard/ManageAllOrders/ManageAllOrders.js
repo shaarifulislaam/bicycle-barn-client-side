@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const { control, setControl, user } = useAuth();
   useEffect(() => {
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/orders")
+    fetch("https://bicycle-barn-server-side.onrender.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [control]);
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://niche-website-server-side-shaarifulislaam.vercel.app/${id}`;
+      const url = `https://bicycle-barn-server-side.onrender.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -35,7 +35,7 @@ const ManageAllOrders = () => {
     let data = orders.find((booking) => booking._id == id);
     data.status = "APPROVED";
     axios
-      .put(`https://niche-website-server-side-shaarifulislaam.vercel.app/orders/${id}`, data)
+      .put(`https://niche-website-server-side-shaarifulislaam-l01bb9hmr.vercel.app/orders/${id}`, data)
       .then((res) => {
         if (res) {
           alert("Approved");

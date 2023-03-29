@@ -17,14 +17,14 @@ const Purchase = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`https://niche-website-server-side-shaarifulislaam.vercel.app/products/${purchaseId}`)
+    fetch(`https://bicycle-barn-server-side.onrender.com/products/${purchaseId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
 
   const onSubmit = (data) => {
     data.status = "pending";
-    fetch("https://niche-website-server-side-shaarifulislaam.vercel.app/orders", {
+    fetch("https://bicycle-barn-server-side.onrender.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
